@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    /* background-color: #66d0e7; */
+}
+
+canvas {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crsip-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+
+li, a, button, h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 600;
+    color: #493A27;
+    text-decoration: none;
+}
+
+li, a, button {
+    font-size: 16px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    padding-top: 20px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+header nav ul li:nth-child(3) {
+    padding-right: 30px;
+}
+
+.left_side_nav {
+    margin-right: auto;
+}
+
+.left_side_nav a {
+    transition: all 0.3s ease 0s;
+}
+
+.left_side_nav a:hover {
+    color: #977E5A;
+}
+
+.left_side_nav a:nth-child(1) {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.left_side_nav a:nth-child(2) {
+    padding-right: 30px;
+}
+
+.nav__links {
+    list-style: none;
+
+    /* Disable text selection */
+    user-select: none;
+
+    /* Disable text dragging */
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+.nav__links li button {
+    transition: all 0.3s ease 0s;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.nav__links li button:hover {
+    color: #977E5A;
+}
+
+/* ==================================== Build HUD ==================================== */
+
+.build_hud {
+    position: absolute;
+    border: 1px solid #000;
+    background-color: #EADDCB;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 1000;
+    margin-top: 30px;
+    padding: 0 0 0 15px;
+    border-radius: 6px;
+    display: none;
+}
+
+#build_hud_box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.build_hud_square {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.build_hud_square img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+/* ==================================== Modal ==================================== */
+
+.close {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==================================== Shop ==================================== */
+
+.shop-content {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 600;
+    background-color: #ede2d3;
+    color: #493A27;
+    padding: 20px;
+    box-shadow: 3px 3px 0 0 rgba(0,0,0,0.3);
+    border-radius: 6px;
+    width: 80%;
+    height: 80%;
+    max-width: 600px;
+    max-height: 600px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    transform: translateY(-120%);
+    transition: transform 0.5s ease-in-out;
+
+    /* Disable text selection */
+    user-select: none;
+    /* Disable text dragging */
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+}
+
+.modal.show .shop-content {
+    transform: translateY(0);
+}
+
+.shop-buttons button {
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #CFAF99;
+    color: #493A27;
+    border-radius: 8px;
+    margin: 0px 40px;
+    box-shadow: 1.5px 1.5px 0 0 rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+#shop-body-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.shop-pack-content-left-side {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 10px 30px;
+}
+
+.shop-pack-content-left-side-square {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.3);
+}
+
+.pack-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.main-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.shop-pack-content-right-side {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    margin-right: 30px;
+    margin-left: 10px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#shop-pack-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-pack-main-btn-placement {
+    display: flex;
+    gap: 20px;
+    margin: 15px;
+}
+
+.shop-purchase-pack-btn {
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    background-color: #B19989;
+    cursor: pointer;
+    box-shadow: 1.5px 1.5px 0 0 rgba(0,0,0,0.5);
+    display: block;
+    width: 70px;
+}
+
+/* ==================================== Item Toggle Hud ==================================== */
+
+.item_toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 10px;
+    z-index: 1000;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 600;
+    color: #493A27;
+    text-decoration: none;
+}
+
+.item_toggle_box {
+    background-color: #EADDCB;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 1px 1px 0 0 rgba(0,0,0,0.3);
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ==================================== Game ==================================== */
+
+#hiddencanvas {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#canvas1 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#isomousecoord {
+    position: absolute;
+    top: 120px;
+    left: 25px;
+    pointer-events: none; /* Ensures text does not block canvas interactions */
+}
+
+#characterImage, #treeImage, #bench1Image, #gridSelector, #gridSelector_green, #gridSelector_red {
+    display: none;
+}

@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "Gamified Web Blocker",
+    "description": "A gamefied productivity app",
+    "version": "1.0",
+    "author": "Albert Luo",
+  
+    "action": {
+      "default_popup": "public/popup.html"
+    },
+  
+    "permissions": [
+      "tabs",
+      "storage",
+      "activeTab",
+      "identity"
+    ],
+  
+    "background": {
+      "service_worker": "background.js"
+    },
+
+    "oauth2": {
+      "client_id": "20118193498-6c6ct9liu1de2gn86721fp3vgpshdlok.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+      ]
+    },
+  
+    "options_ui": {
+      "page": "public/options.html",
+      "open_in_tab": true
+    },
+  
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "src/index.html"
+        ],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <img id="bench1Image" src="sprites/benches/bench1.png">
+    <img id="gridSelector" src="sprites/gridSelector.png">
+    <img id="gridSelector_green" src="sprites/gridSelector_green.png">
+    <img id="gridSelector_red" src="sprites/gridSelector_red.png">
+
+
+
+    <header>
+        <div class="left_side_nav">
+            <a href="#">Stats</a>
+            <a href="#">Settings</a>
+            <a href="#">Help</a>
+        </div>
+         <nav>
+            <ul class="nav__links">
+                <li><button id="buildBtn">Build</button></li>
+                <li><button>Storage</button></li>
+                <li><button id="openShopBtn">Shop</button></li>
+            </ul>
+         </nav>
+    </header>
+
+    <div id="build_hud" class="build_hud">
+        <p>Items</p>
+        <div id="build_hud_box">
+
+        </div>
+    </div>
+
+    <canvas id="hiddencanvas"></canvas>
+    <canvas id="canvas1"></canvas>
+    <div id="isomousecoord">X: 0, Y: 0</div>
+
+    <div id="shop-modal" class="modal">
+        <div id="shop-content" class="shop-content">
+            <span id="closeShopBtn" class="close">&times;</span>
+            <h1>Shop</h1>
+            <div class="shop-buttons">
+                <button id="shop-pack-btn">Packs</button>
+                <button id="shop-decor-btn">Decor</button>
+            </div>
+            <div id="shop-body-content"></div>
+        </div>
+    </div>
+
+    <div id="item_toggle" class="item_toggle">
+        <div id="move_item" class="item_toggle_box">Move</div>
+        <div id="sell_item" class="item_toggle_box">Sell</div>
+    </div>
+
+
+    <script type="module" src="classes/buildHud.js"></script>
+    <script type="module" src="classes/item.js"></script>
+    <script type="module" src="classes/character.js"></script>
+    <script type="module" src="shop.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="gamescript.js"></script>
+</body>
+</html>
