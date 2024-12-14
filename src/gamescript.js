@@ -8,8 +8,9 @@ import { grid } from './exports/worldGrid.js';
 import { retrieveData, updateGrid } from './exports/auth.js'; 
 import constants from './exports/constants.js';
 
-window.addEventListener('load', function() {
-    retrieveData((data) => {
+window.addEventListener('load', async () => {
+    const data = await retrieveData();
+
     console.log(data);
     console.log(resources.images);
     const canvas = document.getElementById('canvas1');
@@ -513,6 +514,5 @@ window.addEventListener('load', function() {
         grid[itemClicked.grid_x][itemClicked.grid_y] = constants.EMPTY_TILE;
         itemClicked = null;
     })
-    });
 });
 
